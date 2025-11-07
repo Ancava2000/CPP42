@@ -1,0 +1,43 @@
+std::vector<T>:
+
+A vector in C++ is like a resizable array.
+Both vectors and arrays are data structures used to store multiple elements of the same data type.
+The difference between an array and a vector, is that the size of an array cannot be modified (you cannot add or remove elements from an array). A vector however, can grow or shrink in size as needed.
+vector<type> vectorName. Add elements via:
+	- = {}: Specific values
+	- (5): specific size with 0
+	- (size, value).
+There are vectors whose type is a class (in this case, Account::t). When you create that vector, instead of adding elements as said previously, you have to initialize that object with its constructor.
+In this case, it needs an integer. So, if you have multiple integers, you add each object with its respective integer inside the vector. The elements of the vector are those objects of the class.
+It creates Account objects from each value of the indicated int range.
+The standar 98 is used, so is necessary to first have the array with elements and then, when creating the vector, indicate between () a pointer to the first element and a pointer to the last.
+In the example with class with a constructor which needs integer:
+	- int amounts[] = {1, 23, 54, 4};
+	- int amount_size = ( sizeof(amounts) / sizeof(int) ); 
+	- std::vector<Account> accounts( amounts(first pointer), amount_size(last_pointer) );
+With the newest standard you just add the array:
+	- std::vector<Account> accounts{Account(1), Account(23)...};
+	- std::vector<int> deposits{1, 34, 45...};
+It is also possible to loop through vectors with an iterator: vector<type>::iterator iteratorname
+
+
+Iterator in vector:
+
+Similar to a pointer:
+	- *it: actual element.
+	- ++it: next element.
+In this case, we create a pointer to the vector.begin and another to the vector.end.
+
+
+std::pair<first element, second element>:
+
+Simple structure with two members: .first .second.
+In this case, used to iterate two vector at the same time. Access the member with it.
+
+
+std::for_each(first, last, function):
+
+Apply the function in each element of the range.
+In this case we need to use std::mem_fun_ref to use the function:
+	- When we want to use an object's method.
+For each account from the vector, the object's method is called.
