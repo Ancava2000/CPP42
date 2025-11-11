@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 13:39:55 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/11 06:58:07 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/11/10 13:00:19 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void Cat::makeSound(void) const{
 		P.e: In the copy constructor, this->brain = other.brain
 		In this case, both cat1.brain and cat2.brain point to the same memory direction.
 		If one is modified or deleted it affects the other.
-	- Deep copy: Create a new indepent copy. Each one has its own memory.
+	- Deep copy: Create a new indepent copy.
 */
