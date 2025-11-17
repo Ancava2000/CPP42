@@ -77,7 +77,7 @@ Fixed Fixed::operator*(const Fixed &other) const{
 
 Fixed Fixed::operator/(const Fixed &other) const{
 	Fixed result;
-	result._rawBits = (_rawBits << _fractionalbits) /  _fractionalbits;
+	result._rawBits = static_cast<float>(_rawBits) / static_cast<float>(other._rawBits) * (1 << _fractionalbits);
 	return (result);}
 
 //[INCREASE AND DECREASE OPERATORS]
