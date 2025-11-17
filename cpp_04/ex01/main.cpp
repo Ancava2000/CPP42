@@ -36,7 +36,13 @@ int main(void){
 	std::cout << "\n--- Array sounds ---\n";
 	for (int i = 0; i < nb; i++)
 		array[i]->makeSound();
-		
+	
+	std::cout << "\n--- Deep copy test ---\n";
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
+
 	std::cout << "\n--- Deleting animals ---\n";
 	for (int i = 0; i < nb; i++)
 		delete array[i];
