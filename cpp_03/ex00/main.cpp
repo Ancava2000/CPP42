@@ -20,6 +20,7 @@ int main(void){
 
 	operator_claptrap = copy_claptrap;
 
+	std::cout << "\n";
 	parameter_claptrap.attack("enemy");
 	parameter_claptrap.takeDamage(5);
 	parameter_claptrap.beRepaired(2);
