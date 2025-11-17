@@ -17,23 +17,23 @@ int main(void){
 	std::cout << "DEFAULT----" << std::endl;
 	ScavTrap default_scavtrap;
 	default_scavtrap.attack("enemy");
-	default_scavtrap.gateKeeper();
+	default_scavtrap.guardGate();
 	
 	std::cout << "NAMED----" << std::endl;
 	ScavTrap parameter_scavtrap("Ana");
 	parameter_scavtrap.attack("enemy");
-	parameter_scavtrap.gateKeeper();
+	parameter_scavtrap.guardGate();
 
 	std::cout << "COPY----" << std::endl;
 	ScavTrap copy_scavtrap(default_scavtrap);
 	copy_scavtrap.attack("enemy");
-	copy_scavtrap.gateKeeper();
+	copy_scavtrap.guardGate();
 	
 	std::cout << "OPERATOR----" << std::endl;
 	ScavTrap operator_scavtrap;
 	operator_scavtrap = copy_scavtrap;
 	operator_scavtrap.attack("enemy");
-	operator_scavtrap.gateKeeper();
+	operator_scavtrap.guardGate();
 	
 	std::cout << "DESTRUCTOR----" << std::endl;
 	
