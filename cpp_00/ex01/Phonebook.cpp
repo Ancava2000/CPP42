@@ -83,7 +83,7 @@ str Phonebook::format(str text){
 
 // Table with all contacts' short info  
 void Phonebook::display_contact_summary(int i){
-	std::cout << std::setw(5) << i << "|";
+	std::cout << std::setw(10) << i << "|";
 	std::cout << std::setw(10) << format(contact[i].getFirstName()) << "|";
 	std::cout << std::setw(10) << format(contact[i].getLastName()) << "|";
 	std::cout << std::setw(10) << format(contact[i].getNickname()) << "|\n";
@@ -110,7 +110,7 @@ void Phonebook::search_contact(){
 	}
 	int i = 0;
 	
-	std::cout << std::setw(5) << "Index" << "|";
+	std::cout << std::setw(10) << "Index" << "|";
 	std::cout << std::setw(10) << "Firstname" << "|";
 	std::cout << std::setw(10) << "Lastname" << "|";
 	std::cout << std::setw(10) << "Nickname" << "|\n";
