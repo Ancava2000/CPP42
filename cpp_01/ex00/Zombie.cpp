@@ -13,13 +13,13 @@
 #include "Zombie.hpp"
 
 Zombie::Zombie(str name) : name(name){
-	std::cout << name << " zombie is awake" << std::endl;
+	std::cout << name << ": zombie is awake" << std::endl;
 }
 
 Zombie::~Zombie(void){
-	std::cout << name << " zombie is dead" << std::endl;
+	std::cout << name << ": zombie is dead" << std::endl;
 }
 
 void Zombie::announce(void){
-	std::cout << name << " BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
