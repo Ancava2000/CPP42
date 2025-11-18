@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 10:45:22 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/18 11:29:45 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/11/18 13:43:01 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade){
 	if (grade < 1)
 		throw GradeTooHighException();
 	else if (grade > 150)
-		throw GradeTooHighException();
+		throw GradeTooLowException();
+	std::cout << "Bureaucrat named " << name << " created with a range of " << grade << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.grade){};
@@ -49,18 +50,25 @@ const char* Bureaucrat::GradeTooLowException::what() const throw(){
 	return ("Grade is too low");
 }
 
-int Bureaucrat::increment(int grade){
-	if (grade <= 1)
+int Bureaucrat::increment(){
+	if (this->grade <= 1){
+		std::cout << "Bureaucrat " << name << " tried to increment their grade" << std::endl;
 		throw GradeTooHighException();
+	}
+	std::cout << "Bureaucrat " << name << " incremented their grade" << std::endl;
 	return (grade--);
 }
 
-int Bureaucrat::decrement(int grade){
-	if (grade >= 150)
+int Bureaucrat::decrement(){
+	if (this->grade >= 150){
+		std::cout << "Bureaucrat " << name << " tried to decrement their grade" << std::endl;
 		throw GradeTooLowException();
+	}
+	std::cout << "Bureaucrat " << name << " decremented their grade" << std::endl;
 	return (grade++);
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &Bureaucrat){
 	os << Bureaucrat.getName() << ", bureaucrat grade " << Bureaucrat.getGrade() << ".";
+	return os;
 }

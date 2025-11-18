@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 09:39:53 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/18 11:19:30 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/11/18 13:31:58 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class Bureaucrat
 		std::string getName(void) const;
 		int getGrade(void) const;
 
-		int increment(int grade);
-		int decrement(int grade);
+		int increment();
+		int decrement();
 
 		class GradeTooHighException : public std::exception {
 		public:
