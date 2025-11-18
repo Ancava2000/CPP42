@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 12:41:02 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/18 14:50:06 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/11/18 14:56:24 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,13 @@ int main(){
 	std::cout << std::endl;
 	
 	// Copy and assignment
-	try{
-		Bureaucrat e("Pepa", 23);
-		Bureaucrat copy(e);
-		std::cout << copy << std::endl;
-		Bureaucrat f("Pepe", 32);
-		Bureaucrat assignment = f;
-		std::cout << assignment << std::endl;
-	}
-	catch (const std::exception &e){
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
+	Bureaucrat e("Pepa", 23);
+	Bureaucrat copy(e);
+	std::cout << copy << std::endl;
+	Bureaucrat f("Pepe", 32);
+	Bureaucrat assignment = f;
+	std::cout << assignment << std::endl;
+
 	return 0;
 }
 
