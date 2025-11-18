@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 10:45:22 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/18 13:43:01 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/11/18 13:57:51 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 Bureaucrat::Bureaucrat() : name("Default"), grade(150){};
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade){
+Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name){
 	if (grade < 1)
 		throw GradeTooHighException();
 	else if (grade > 150)
 		throw GradeTooLowException();
+	this->grade = grade;
 	std::cout << "Bureaucrat named " << name << " created with a range of " << grade << std::endl;
 }
 
@@ -26,7 +27,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other){
 	if (this != &other){
-		name = other.name;
 		grade = other.grade;
 	}
 	return *this;
@@ -34,7 +34,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other){
 
 Bureaucrat::~Bureaucrat(){};
 
-std::string Bureaucrat::getName(void) const{
+const std::string Bureaucrat::getName(void) const{
 	return this->name;
 }
 
@@ -50,22 +50,22 @@ const char* Bureaucrat::GradeTooLowException::what() const throw(){
 	return ("Grade is too low");
 }
 
-int Bureaucrat::increment(){
+void Bureaucrat::increment(){
 	if (this->grade <= 1){
 		std::cout << "Bureaucrat " << name << " tried to increment their grade" << std::endl;
 		throw GradeTooHighException();
 	}
+	grade--;
 	std::cout << "Bureaucrat " << name << " incremented their grade" << std::endl;
-	return (grade--);
 }
 
-int Bureaucrat::decrement(){
+void Bureaucrat::decrement(){
 	if (this->grade >= 150){
 		std::cout << "Bureaucrat " << name << " tried to decrement their grade" << std::endl;
 		throw GradeTooLowException();
 	}
+	grade++;
 	std::cout << "Bureaucrat " << name << " decremented their grade" << std::endl;
-	return (grade++);
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &Bureaucrat){

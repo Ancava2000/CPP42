@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 09:39:53 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/18 13:31:58 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/11/18 14:38:20 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@
 class Bureaucrat
 {
 	private:
-		std::string name;
+		const std::string name;
 		int grade;
 	public:
 		Bureaucrat();
-		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const std::string& name, int grade);
 		Bureaucrat(const Bureaucrat& other);
 		Bureaucrat& operator=(const Bureaucrat &other);
 		~Bureaucrat();
 
-		std::string getName(void) const;
+		const std::string getName(void) const;
 		int getGrade(void) const;
 
-		int increment();
-		int decrement();
+		void increment();
+		void decrement();
 
 		class GradeTooHighException : public std::exception {
 		public:
@@ -50,3 +50,10 @@ class Bureaucrat
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &Bureaucrat);
 
 #endif
+
+/*
+	The two exception classes inherit from std::exception. what() is a virtual function of the class std::exception
+	that returns an error message that describes the exception. In this case, it is rewritten to show a personalized message.
+	The throw() at the end means that this method doesn't throw exceptions (the method what() is called to manage an exception, it doesn't need tho throw another.
+	To avoid additional errors).
+*/
