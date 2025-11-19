@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 09:39:53 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/19 09:58:16 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/11/19 11:34:40 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <exception>
 #include <string>
+
+class Form;
 
 class Bureaucrat
 {
@@ -34,10 +36,10 @@ class Bureaucrat
 
 		void increment();
 		void decrement();
+		void signForm(Form &form);
 
 		class GradeTooHighException : public std::exception {
 		public:
-			
 			const char* what() const throw();
 		};
 
@@ -50,10 +52,3 @@ class Bureaucrat
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &Bureaucrat);
 
 #endif
-
-/*
-	The two exception classes inherit from std::exception. what() is a virtual function of the class std::exception
-	that returns an error message that describes the exception. In this case, it is rewritten to show a personalized message.
-	The throw() at the end means that this method doesn't throw exceptions (the method what() is called to manage an exception, it doesn't need tho throw another.
-	To avoid additional errors).
-*/
