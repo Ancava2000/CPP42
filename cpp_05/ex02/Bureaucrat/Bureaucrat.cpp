@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 10:45:22 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/20 05:43:59 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/11/20 14:26:00 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name){
 	else if (grade > 150)
 		throw GradeTooLowException();
 	this->grade = grade;
+	std::cout << "Bureaucrat: " << name << " created" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.grade){}

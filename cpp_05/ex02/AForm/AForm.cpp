@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 10:11:52 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/20 05:18:51 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/11/20 14:14:41 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ AForm::AForm(const std::string &name, const int grade_signed, const int grade_ex
 		throw GradeTooHighException();
 	else if (grade_signed > 150 || grade_execute > 150)
 		throw GradeTooLowException();
+	std::cout << "Form: " << name << " created" << std::endl;
 }
 
 AForm::AForm(const AForm &other)
@@ -58,7 +59,7 @@ const char* AForm::GradeTooLowException::what() const throw(){
 }
 
 const char* AForm::NotSignedException::what() const throw() {
-	return ("Form not signed");
+	return ("Form is not signed");
 }
 
 void AForm::beSigned(Bureaucrat &Bureaucrat){

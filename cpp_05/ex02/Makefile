@@ -1,6 +1,7 @@
 CYAN_2	=	\033[38;5;50m
 
-SRC = Bureaucrat/Bureaucrat.cpp AForm/AForm.cpp main.cpp ShrubberyCreationForm/ShrubberyCreationForm.cpp
+SRC = Bureaucrat/Bureaucrat.cpp AForm/AForm.cpp main.cpp ShrubberyCreationForm/ShrubberyCreationForm.cpp \
+		PresidentialPardonForm/PresidentialPardonForm.cpp RobotomyRequestForm/RobotomyRequestForm.cpp
 NAME = bureaucrat_forms
 CC = c++ -Wall -Wextra -Werror -std=c++98
 

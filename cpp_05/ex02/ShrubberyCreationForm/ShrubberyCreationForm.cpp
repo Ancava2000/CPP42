@@ -6,13 +6,12 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 05:08:46 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/20 06:07:14 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/11/20 13:58:12 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include "../Bureaucrat/Bureaucrat.hpp"
-#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), target("Default"){}
 
@@ -57,4 +56,5 @@ file << " 	oxoxoo    ooxoo\n"
  << "	______/____\\____";
 
  file.close();
+ std::cout << "Look at the tree in the file: " << target << "!" << std::endl;
 }

@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 05:25:37 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/20 13:10:21 by acarro-v         ###   ########.fr       */
+/*   Created: 2025/11/20 13:02:59 by acarro-v          #+#    #+#             */
+/*   Updated: 2025/11/20 13:13:00 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-#define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
 #include <string>
-#include <fstream>
+#include <stdlib.h>
+#include <time.h>
+
 #include "../AForm/AForm.hpp"
 
-// Requires grades: sign 145, exec 137
-class ShrubberyCreationForm : public AForm{
+// Requires grades: sign 72, exec 45
+
+class RobotomyRequestForm : public AForm{
 	private:
 		std::string target;
 	public:
-		ShrubberyCreationForm();
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(const ShrubberyCreationForm &other);
-		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
-		~ShrubberyCreationForm();
+		RobotomyRequestForm();
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(const RobotomyRequestForm &other);
+		RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
+		~RobotomyRequestForm();
 
 		void execute(Bureaucrat const &executor) const;
 };
