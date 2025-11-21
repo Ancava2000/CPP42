@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 08:50:18 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/07 16:34:47 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/11/21 14:40:23 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,20 @@ void Phonebook::add_contact(){
 			std::cout << "\nExiting...\n";
 			exit(0);
 		}
-	contact[index].setPhoneNumber(get_input("Enter Phone Number: "));
-	if (std::cin.eof()) {
+	while (1){
+		input = get_input("Enter Phone Number: ");
+		if (std::cin.eof()) {
 			std::cout << "\nExiting...\n";
 			exit(0);
 		}
+		if (input.find_first_not_of("0123456789") == std::string::npos) {
+			contact[index].setPhoneNumber(input);
+			break;
+		}
+		else {
+			std::cout << "Error: Please enter a valid phone number (numbers only).\n";
+		}
+	}
 	contact[index].setDarkestSecret(get_input("Enter Darkest Secret: "));
 	if (std::cin.eof()) {
 			std::cout << "\nExiting...\n";
