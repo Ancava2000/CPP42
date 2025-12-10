@@ -62,11 +62,19 @@ bool Fixed::operator!=(const Fixed &other) const{
 //[MATH OPERATORS]
 
 Fixed Fixed::operator+(const Fixed &other) const{
+<<<<<<< HEAD
 	return (_rawBits + other._rawBits) / (1 << _fractionalbits);;
 }
 
 Fixed Fixed::operator-(const Fixed &other) const{
 	return (_rawBits - other._rawBits) / (1 << _fractionalbits);;
+=======
+	return (_rawBits + other._rawBits) / (1 << _fractionalbits);
+}
+
+Fixed Fixed::operator-(const Fixed &other) const{
+	return (_rawBits - other._rawBits) / (1 << _fractionalbits);
+>>>>>>> 55da8dbaa2064150da721095e3f7f468cea0b497
 }
 
 Fixed Fixed::operator*(const Fixed &other) const{
