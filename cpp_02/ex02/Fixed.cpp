@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 13:58:47 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/08 15:39:55 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/12/10 14:35:24 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,11 @@ bool Fixed::operator!=(const Fixed &other) const{
 //[MATH OPERATORS]
 
 Fixed Fixed::operator+(const Fixed &other) const{
-	return (_rawBits + other._rawBits);
+	return (_rawBits + other._rawBits) / (1 << _fractionalbits);;
 }
 
 Fixed Fixed::operator-(const Fixed &other) const{
-	return (_rawBits - other._rawBits);
+	return (_rawBits - other._rawBits) / (1 << _fractionalbits);;
 }
 
 Fixed Fixed::operator*(const Fixed &other) const{
