@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 13:39:52 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/11 07:30:54 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/12/16 07:50:33 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,4 @@ class Animal{
 	and serves as a blueprint for derived classes (p.e: when a pointer is used, Animal* array[] -> array[1] = new Cat()), which must provide their own implementation.
 	
 	They are useful in polymorphism where different classes share the same interface but have different behaviors.
-
-	A pure virtual function forces derived classes to override it. It's not neccessary to indicate override in 98 version.
 */

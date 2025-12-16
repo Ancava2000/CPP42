@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 17:36:57 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/10 12:43:35 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/12/16 07:46:13 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ Dog &Dog::operator=(const Dog &other){
 	std::cout << "Dog Operator constructor called" << std::endl;
 	if (this != &other){
 		Animal::operator=(other);
-		delete this->brain;						// delete actual brain
-		this->brain = new Brain(*other.brain);	// create new brain with the content of the copied one
+		delete this->brain;						
+		this->brain = new Brain(*other.brain);	
 	}
 	return (*this);
 }

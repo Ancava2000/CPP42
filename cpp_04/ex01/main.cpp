@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 13:01:18 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/11 07:06:36 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/12/16 07:40:48 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,6 @@ int main(void){
 	std::cout << "\n--- Array sounds ---\n";
 	for (int i = 0; i < nb; i++)
 		array[i]->makeSound();
-	
-	std::cout << "\n--- Deep copy test ---\n";
-	Dog basic;
-	{
-		Dog tmp = basic;
-	}
 
 	std::cout << "\n--- Deleting animals ---\n";
 	for (int i = 0; i < nb; i++)

@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 14:47:44 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/10 12:45:58 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/12/16 07:46:06 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 
 class Dog : public Animal{
 	private:
-		Brain* brain;						// Pointer to brain object
+		Brain* brain;						
 	public:
 		Dog();
-		Dog(const Dog &other);				// Deep copy of brain
-		Dog& operator=(const Dog &other);	// Deep copy of brain
+		Dog(const Dog &other);				
+		Dog& operator=(const Dog &other);	
 		~Dog();
 
 		void makeSound(void) const;

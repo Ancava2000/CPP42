@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 13:39:52 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/10 07:59:59 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/12/16 07:27:09 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,3 @@ class Animal{
 };
 
 #endif
-
-/*
-	When you declare an inherit class on the heap (Animal* cat = new Cat()), you have:
-		- Static type: Animal* (what the compiler sees).
-		- Dynamic type: Cat (what's actually in the dynamic memory).
-	You can have a shared method (with the same name but different actions) in both types. 
-	In these cases (both types and shared method) the compiler only see the static type, so it only calls the
-	method of the static type ignoring the actual object type.
-	With virtual, the program at runtime checks the virtual table to find the correct implementation based
-	on the dynamic type.
-	You have to use virtual in:
-		- Methods in the base class that are overrided by derived class (same name, different actions).
-		- ALWAYS in destructor in base classes: without virtual only deletes base class, causing memory leaks.
-*/
