@@ -6,7 +6,7 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 07:14:51 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/11/10 07:31:24 by acarro-v         ###   ########.fr       */
+/*   Updated: 2025/12/16 06:51:53 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ WrongAnimal::WrongAnimal() : type("Default"){
 }
 
 WrongAnimal::WrongAnimal(const std::string type) : type(type){
-	std::cout << "WrongAnimal Parameter constructor called" << std::endl;
+	std::cout << "WrongAnimal " << type << " Parameter constructor called" << std::endl;
 
 }
 
